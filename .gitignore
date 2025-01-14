@@ -1,0 +1,9 @@
+# Ignore object files
+*.o
+
+# Ignore the build executable
+AListTest
+
+# Ignore other build artifacts (if any)
+*.out
+*.exe
