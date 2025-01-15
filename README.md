@@ -1,5 +1,5 @@
 # CMPT225A1-Part-A
-
+TEST
 Assignment 1, Part A
 Relevant Textbook Reading
 
