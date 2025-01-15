@@ -26,13 +26,19 @@ class AList
         // remove all list contents 
         // 
         // Implement this...
+        std::fill(objects, objects+theCapacity, 0);
+        theSize = 0;
     }
 
     // Operations 
 
     void addLeft( const Object x )// Insert a new object at the left end 
     {
-	// Implement this....
+	  // Implement this....
+        if(theSize == theCapacity){
+          std::cout << "AList full" << std::endl;
+          return;
+        }
         theSize ++;
         objects[left] = x;
         left = (left - 1 + theCapacity) % theCapacity;
@@ -41,6 +47,10 @@ class AList
 
     void addRight( const Object x )// Insert a new object at the right end
     {
+        if(theSize == theCapacity){
+          std::cout << "AList full" << std::endl;
+          return;
+        }
         theSize ++ ;
 	      objects[right] = x ;
         right = (right+1) % theCapacity ;
@@ -80,7 +90,7 @@ class AList
       // std::cout << std::endl;
       std::cout << "Raw objects array: ";
       for (int i = 0; i < theCapacity; ++i) {
-        std::cout << objects[i] << (i < theCapacity - 1 ? ", " : "x");
+        std::cout << objects[i] << (i < theCapacity - 1 ? ", " : "");
       }
       std::cout << std::endl;
 
