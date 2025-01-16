@@ -3,8 +3,8 @@ TEST
 Assignment 1, Part A
 Relevant Textbook Reading
 
-    Chapter 3, except linked lists (3.2.2, 3.5) and iterators (e.g., 3.3.1, 3.3.2, 3.3.3).
-    Chapter 1, Section 1.4; Section 1.6 up to end of 1.6.2; Section 1.6.
+Chapter 3, except linked lists (3.2.2, 3.5) and iterators (e.g., 3.3.1, 3.3.2, 3.3.3).
+Chapter 1, Section 1.4; Section 1.6 up to end of 1.6.2; Section 1.6.
 
 General
 
@@ -17,15 +17,15 @@ Files Provided
 
 The most important file is the AList.h file, which contains a partial implementation of the AList class
 
-    AList.h 
+AList.h 
 
-    Download AList.h - A partial implementation of the Alist class.
+Download AList.h - A partial implementation of the Alist class.
 
 Some additional files will be added to help with your completion of the assignment.
 For you to do
 
-    Complete the implementation of the AList class. If you don't have C++ experience, I recommend as a first step completing it just as a stack, then as a queue, and then finally adding the all the AList operations only after you have the basic circular-array queue implementation completely correct.
-    Design and implement a test program that demonstrates the correctness of an implementation of the AList class. Obviously, you should be writing various small test programs as you develop your AList implementation, but at the end you should be thinking of a suite of tests that will convince even a skeptic of the correctness.
+Complete the implementation of the AList class. If you don't have C++ experience, I recommend as a first step completing it just as a stack, then as a queue, and then finally adding the all the AList operations only after you have the basic circular-array queue implementation completely correct.
+Design and implement a test program that demonstrates the correctness of an implementation of the AList class. Obviously, you should be writing various small test programs as you develop your AList implementation, but at the end you should be thinking of a suite of tests that will convince even a skeptic of the correctness.
 
 Submission and Grading
 
@@ -33,12 +33,12 @@ Submit a .zip file containing your code to Coursys. A grading breakdown will be 
 
 Your submission should contain the following files (and probably only these - don't include anything that is not needed):
 
-    AList.h, your implementation,
-    AListTest.cpp, your test program,
-    Makefile
+AList.h, your implementation,
+AListTest.cpp, your test program,
+Makefile
 
 Some Details
 
-    Please name your files as in the above submission instruction;
-    Makefile: at least "make all" and "make clean" must work. Your Makefile should only compile your AList class and your test progam;
-    Your submission is due no later than 8:00 pm, Friday January 24
+Please name your files as in the above submission instruction;
+Makefile: at least "make all" and "make clean" must work. Your Makefile should only compile your AList class and your test progam;
+Your submission is due no later than 8:00 pm, Friday January 24

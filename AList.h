@@ -26,8 +26,10 @@ class AList
         // remove all list contents 
         // 
         // Implement this...
-        std::fill(objects, objects+theCapacity, 0);
+        //std::fill(objects, objects+theCapacity, 0);
         theSize = 0;
+        left = 0;
+        right = 1;
     }
 
     // Operations 
@@ -35,10 +37,6 @@ class AList
     void addLeft( const Object x )// Insert a new object at the left end 
     {
 	  // Implement this....
-        if(theSize == theCapacity){
-          std::cout << "AList full" << std::endl;
-          return;
-        }
         theSize ++;
         objects[left] = x;
         left = (left - 1 + theCapacity) % theCapacity;
@@ -47,10 +45,6 @@ class AList
 
     void addRight( const Object x )// Insert a new object at the right end
     {
-        if(theSize == theCapacity){
-          std::cout << "AList full" << std::endl;
-          return;
-        }
         theSize ++ ;
 	      objects[right] = x ;
         right = (right+1) % theCapacity ;
@@ -82,17 +76,19 @@ class AList
        if (empty()) {
         std::cout << "AList is empty" << std::endl;
       } 
-      // int index = (left + 1) % theCapacity; // Start from the logical first element
-      // for (int i = 0; i < theSize; ++i) {
-      //   std::cout << objects[index] << (i < theSize - 1 ? ", " : "");
-      //   index = (index + 1) % theCapacity; // Move to the next logical element
-      // }
-      // std::cout << std::endl;
-      std::cout << "Raw objects array: ";
-      for (int i = 0; i < theCapacity; ++i) {
-        std::cout << objects[i] << (i < theCapacity - 1 ? ", " : "");
+      int index = (left + 1) % theCapacity; // Start from the logical first element
+      for (int i = 0; i < theSize; ++i) {
+        std::cout << objects[index] << (i < theSize - 1 ? ", " : "");
+        index = (index + 1) % theCapacity; // Move to the next logical element
       }
       std::cout << std::endl;
+      
+      //Raw Display
+      // std::cout << "Raw objects array: ";
+      // for (int i = 0; i < theCapacity; ++i) {
+      //   std::cout << objects[i] << (i < theCapacity - 1 ? ", " : "");
+      // }
+      // std::cout << std::endl;
 
 
     }
@@ -101,21 +97,31 @@ class AList
     // array, and relevant variables, for debugging or verifying 
     // correctness. 
     {
-      // Implement this. 
-      std::cout << "theSize " << theSize << std::endl;
-      std::cout << "Left " << left << std::endl;
-      std::cout << "Right " << right << std::endl;
-      std::cout << "theCapacity " << theCapacity << std::endl;
 
-      if (empty()) {
-      std::cout << "AList is empty" << std::endl;
-      } 
+      std::cout << "Elements in the AList: ";
+      
       int index = (left + 1) % theCapacity; // Start from the logical first element
       for (int i = 0; i < theSize; ++i) {
         std::cout << objects[index] << (i < theSize - 1 ? ", " : "");
         index = (index + 1) % theCapacity; // Move to the next logical element
       }
       std::cout << std::endl;
+
+      // Implement this. 
+      std::cout << "theSize " << theSize << std::endl;
+      std::cout << "Left " << left << std::endl;
+      std::cout << "Right " << right << std::endl;
+      std::cout << "theCapacity " << theCapacity << std::endl;
+
+      //Raw Display
+      std::cout << "Raw objects array: ";
+      for (int i = 0; i < theCapacity; ++i) {
+        std::cout << objects[i] << (i < theCapacity - 1 ? ", " : "");
+      }
+      std::cout << std::endl << std::endl;
+
+
+      
     }
 
 

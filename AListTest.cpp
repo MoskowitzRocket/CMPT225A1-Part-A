@@ -3,37 +3,31 @@
 
 int main(){
 
-    std::cout << "Hello World" << std::endl;
+    
 
     AList<int> alist;
 
-    for (int i{1}; i <=14; i++){
-        alist.addLeft(i);
-        alist.display();
-    }   
-    alist.clear();
-    for (int i{1}; i <=4; i++){
-        alist.addRight(i);
-        alist.display();
-    }   
-    // AList<std::string> blist;
-
-    // for (int i{1}; i <= 14; i++){
-    //     blist.addRight(to_string(i));
-    //     blist.display();
-    // }
+    // for (int i{1}; i <=12; i++){
+    //     alist.addLeft(i);
+    //     alist.display();
+    // }  
+    // for (int i{1}; i <=12; i++){
+    //     alist.removeLeft();
+    //     alist.display();
+    // }  
+    alist.addLeft(53);
+    alist.display();
+    // alist.ddisplay();
     alist.clear();
     alist.display();
-    alist.addRight(4);
-    alist.display();
+    // alist.display();
 
-    AList<int> blist;
-    blist.ddisplay();
-    blist.addRight(4);
-    blist.ddisplay();
-    blist.addRight(2134);
-    blist.addLeft(41);
-    blist.ddisplay();
+    alist.addLeft(58);
+    //alist.display();
+    alist.display();
+    alist.addRight(59);
+    alist.addRight(59);
+    alist.display();
 
 
 
