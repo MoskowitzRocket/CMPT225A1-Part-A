@@ -80,5 +80,10 @@ void testAList() {
 
 int main() {
     testAList();
+
+    AList<int> alist;
+    alist.addLeft(5);
+    alist.ddisplay();
+
     return 0;
 }
