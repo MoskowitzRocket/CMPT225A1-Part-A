@@ -54,10 +54,8 @@ class AList
     {
         // Implement this 
         theSize --;
-        Object t_Val = objects[right];
         right = (right - 1 + theCapacity) % theCapacity;
-
-        return t_Val;
+        return objects[right];
 
         
     }
@@ -66,9 +64,8 @@ class AList
     {
         // Implement this 
         theSize--;
-        Object t_Val = objects[left];
         left = (left + 1) % theCapacity;
-        return t_Val;
+        return objects[left];
     }
 
     void display() const // print out the contents of the deque
