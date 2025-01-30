@@ -5,12 +5,11 @@ TARGETS = AListTest TestAddLeft TestAddRight TestRemoveLeft TestRemoveRight
 OBJECTS = AListTest.o TestAddLeft.o TestAddRight.o TestRemoveLeft.o TestRemoveRight.o
 
 RM = rm -f
-RUN = ./ # Default for Linux
+RUN = 
 
 # Detect Windows and adjust commands
 ifeq ($(OS),Windows_NT)
     RM = del /Q
-    RUN =
 endif
 
 all: $(TARGETS)
@@ -37,7 +36,7 @@ clean:
 	$(RM) $(OBJECTS) $(TARGETS) 2>nul || true
 
 run: $(TARGETS)
-	$(RUN)TestAddLeft || echo "TestAddLeft failed"
-	$(RUN)TestAddRight || echo "TestAddRight failed"
-	$(RUN)TestRemoveLeft || echo "TestRemoveLeft failed"
-	$(RUN)TestRemoveRight || echo "TestRemoveRight failed"
+	./TestAddLeft || echo "TestAddLeft failed"
+	./TestAddRight || echo "TestAddRight failed"
+	./TestRemoveLeft || echo "TestRemoveLeft failed"
+	./TestRemoveRight || echo "TestRemoveRight failed"

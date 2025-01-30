@@ -3,6 +3,10 @@
 
 # Ignore the build executable
 AListTest
+TestAddLeft
+TestAddRight
+TestRemoveLeft
+TestRemoveRight
 
 # Ignore other build artifacts (if any)
 *.out
