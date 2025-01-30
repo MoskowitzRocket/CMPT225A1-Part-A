@@ -52,36 +52,51 @@ class AList
 
     // Operations 
 
+    // Add a new object to the left end of the deque
+    // theSize must be less than theCapacity
+
     void addLeft( const Object x )// Insert a new object at the left end 
     {
-	  // Implement this....
+        assert(("AList must not be full to add a value to left side", size() < theCapacity)); 
+	      // Implement this....
         theSize ++;
         objects[left] = x;
         left = (left - 1 + theCapacity) % theCapacity;
 
     }
 
+    // Add a new object to the right end of the deque
+    // theSize must be less than theCapacity
+
     void addRight( const Object x )// Insert a new object at the right end
     {
+        assert(("AList must not be full to add a value to right side", size() < theCapacity));
         theSize ++ ;
 	      objects[right] = x ;
         right = (right+1) % theCapacity ;
     }
 
+    // Remove and return the object at the right end
+    // theSize must be greater than 0
+
     Object removeRight( )// Remove and return the object at the right end
     {
+        assert(("AList must not be empty to remove a value from right side", empty() == false));
+
         // Implement this 
         theSize --;
         right = (right - 1 + theCapacity) % theCapacity;
         return objects[right];
-
-        
+     
     }
+
+    // Remove and return the object at the left end
+    // theSize must be greater than 0
 
     Object removeLeft( )// Remove and return the object at the left end
     {
         // Implement this 
-        assert(("AList must not be empty to remove a value", empty() == false));
+        assert(("AList must not be empty to remove a value from left side", empty() == false));
         theSize--;
         left = (left + 1) % theCapacity;
         return objects[left];

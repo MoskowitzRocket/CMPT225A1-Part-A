@@ -1,21 +1,43 @@
 GXX = g++
 CFLAGS = -g -Wall -std=c++20
 
-TARGET = AListTest
-OBJECTS = AListTest.o
+TARGETS = AListTest TestAddLeft TestAddRight TestRemoveLeft TestRemoveRight
+OBJECTS = AListTest.o TestAddLeft.o TestAddRight.o TestRemoveLeft.o TestRemoveRight.o
 
-# Build target
-$(TARGET): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS)
+RM = rm -f
+RUN = ./ # Default for Linux
 
-# Compile source files
-AListTest.o: AListTest.cpp AList.h
-	$(CXX) $(CXXFLAGS) -c AListTest.cpp
+# Detect Windows and adjust commands
+ifeq ($(OS),Windows_NT)
+    RM = del /Q
+    RUN =
+endif
 
-# Clean up build files
+all: $(TARGETS)
+
+AListTest: AListTest.o
+	$(GXX) $(CFLAGS) -o AListTest AListTest.o
+
+TestAddLeft: TestAddLeft.o
+	$(GXX) $(CFLAGS) -o TestAddLeft TestAddLeft.o
+
+TestAddRight: TestAddRight.o
+	$(GXX) $(CFLAGS) -o TestAddRight TestAddRight.o
+
+TestRemoveLeft: TestRemoveLeft.o
+	$(GXX) $(CFLAGS) -o TestRemoveLeft TestRemoveLeft.o
+
+TestRemoveRight: TestRemoveRight.o
+	$(GXX) $(CFLAGS) -o TestRemoveRight TestRemoveRight.o
+
+%.o: %.cpp AList.h
+	$(GXX) $(CFLAGS) -c $<
+
 clean:
-	rm -f $(OBJECTS) $(TARGET)
+	$(RM) $(OBJECTS) $(TARGETS) 2>nul || true
 
-
-run:
-	./$(TARGET)
+run: $(TARGETS)
+	$(RUN)TestAddLeft || echo "TestAddLeft failed"
+	$(RUN)TestAddRight || echo "TestAddRight failed"
+	$(RUN)TestRemoveLeft || echo "TestRemoveLeft failed"
+	$(RUN)TestRemoveRight || echo "TestRemoveRight failed"
