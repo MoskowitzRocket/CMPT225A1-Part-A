@@ -1,3 +1,15 @@
+/*
+AUTHOR: Kale Moskowitz
+STUDENT ID: 301588993
+LOGIN ID: kom1
+ASSIGNMENT 1 Part B
+COPYRIGHT: Kale Moskowitz, 2025
+
+Purpose: 
+This file contains a test program for the initial implementation of the AList class.
+*/
+
+
 #include "AList.h"
 #include <iostream>
 #include <string>

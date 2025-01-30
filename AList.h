@@ -2,7 +2,25 @@
 #define ALIST_H
 
 #include <iostream>
+#include <cassert>
+
+
 using namespace std;
+
+/*
+AUTHOR: Kale Moskowitz
+STUDENT ID: 301588993
+LOGIN ID: kom1
+ASSIGNMENT 1 Part B
+COPYRIGHT: Kale Moskowitz, 2025
+
+Purpose: 
+This file contains the class definition for AList, a class that implements a deque using an array.
+
+*/
+
+
+
 
 template <typename Object>
 class AList 
@@ -63,6 +81,7 @@ class AList
     Object removeLeft( )// Remove and return the object at the left end
     {
         // Implement this 
+        assert(("AList must not be empty to remove a value", empty() == false));
         theSize--;
         left = (left + 1) % theCapacity;
         return objects[left];
