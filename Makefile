@@ -36,7 +36,8 @@ clean:
 	$(RM) $(OBJECTS) $(TARGETS) 2>nul || true
 
 run: $(TARGETS)
-	./TestAddLeft || echo "TestAddLeft failed"
-	./TestAddRight || echo "TestAddRight failed"
-	./TestRemoveLeft || echo "TestRemoveLeft failed"
-	./TestRemoveRight || echo "TestRemoveRight failed"
+	-./TestAddLeft 
+	-./TestAddRight 
+	-./TestRemoveLeft 
+	-./TestRemoveRight 
+	./AListTest
